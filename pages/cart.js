@@ -57,7 +57,7 @@ function CartScreen() {
                           width={50}
                           height={50}
                         ></Image>
-                        {/* &nbsp; */}
+                        &nbsp;
                         {item.name}
                       </Link>
                     </td>
@@ -98,7 +98,7 @@ function CartScreen() {
                 <button
                   className="primary-button w-full"
                   onClick={() => {
-                    router.push('/shipping');
+                    router.push('login?redirect=/shipping');
                   }}
                 >
                   Check Out
