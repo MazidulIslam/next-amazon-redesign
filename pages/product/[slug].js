@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
 
 export default function ProductScreen() {
+  const router = useRouter();
   const { state, dispatch } = useContext(Store);
 
   const { query } = useRouter();
@@ -25,6 +26,7 @@ export default function ProductScreen() {
       return;
     }
     dispatch({ type: CART_ADD_ITEM, payload: { ...product, quantity } });
+    router.push('/cart');
   };
   return (
     <Layout title={product.name}>
