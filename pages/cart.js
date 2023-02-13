@@ -5,8 +5,10 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
-export default function CartScreen() {
+// export default function CartScreen() {
+function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
@@ -76,7 +78,7 @@ export default function CartScreen() {
                     <td className="p-5 text-right"> {item.price}</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
-                        <XCircleIcon className="h-5 w-5"></XCircleIcon>
+                        <XCircleIcon className="h-5 w-5 text-red-600"></XCircleIcon>
                       </button>
                     </td>
                   </tr>
@@ -109,3 +111,5 @@ export default function CartScreen() {
     </Layout>
   );
 }
+
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
