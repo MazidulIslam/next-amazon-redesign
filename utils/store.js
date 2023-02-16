@@ -5,6 +5,7 @@ export const Store = createContext();
 
 export const CART_ADD_ITEM = 'CART_ADD_ITEM';
 export const CART_REMOVE_ITEM = 'CART_REMOVE_ITEM';
+export const CART_RESET = 'CART_RESET';
 
 const initialState = {
   cart: Cookies.get('cart')
@@ -35,6 +36,16 @@ function reducer(state, action) {
       );
       Cookies.set('cart', JSON.stringify({ ...state.cart, cartItems }));
       return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    case CART_RESET: {
+      return {
+        ...state,
+        cart: {
+          cartItems: {},
+          shippingAddress: { location: {} },
+          paymentMethod: '',
+        },
+      };
     }
 
     default:
