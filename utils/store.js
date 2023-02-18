@@ -6,6 +6,7 @@ export const Store = createContext();
 export const CART_ADD_ITEM = 'CART_ADD_ITEM';
 export const CART_REMOVE_ITEM = 'CART_REMOVE_ITEM';
 export const CART_RESET = 'CART_RESET';
+export const CART_CLEAR_ITEMS = 'CART_CLEAR_ITEMS';
 export const SAVE_SHIPPING_ADDRESS = 'SAVE_SHIPPING_ADDRESS';
 export const SAVE_PAYMENT_METHOD = 'SAVE_PAYMENT_METHOD';
 
@@ -46,6 +47,15 @@ function reducer(state, action) {
           cartItems: {},
           shippingAddress: { location: {} },
           paymentMethod: '',
+        },
+      };
+    }
+    case CART_CLEAR_ITEMS: {
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          cartItems: [],
         },
       };
     }

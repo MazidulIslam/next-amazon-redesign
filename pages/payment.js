@@ -27,7 +27,7 @@ export default function PaymentScreen() {
         paymentMethod: selectedPaymentMethod,
       })
     );
-    router.push('placeorder');
+    router.push('/placeorder');
   };
 
   useEffect(() => {
@@ -70,3 +70,5 @@ export default function PaymentScreen() {
     </Layout>
   );
 }
+
+PaymentScreen.Auth = true;

@@ -36,7 +36,7 @@ export default function Layout({ title, children }) {
       <div className="flex min-h-screen flex-col justify-between">
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
-            <Link href="/" className="text-lg font-bold text-blue-600">
+            <Link href="/" className="text-lg font-bold">
               amazon
               {/* <a className="text-lg font-bold">amazon</a> */}
             </Link>
@@ -55,9 +55,7 @@ export default function Layout({ title, children }) {
               ) : session?.user ? (
                 // session.user.name
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-blue-600">
-                    {session.user.name}
-                  </Menu.Button>
+                  <Menu.Button>{session.user.name}</Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right shadow-lg bg-white">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link" href="/profile">
