@@ -838,6 +838,28 @@
   "resolved" "https://registry.npmjs.org/@panva/hkdf/-/hkdf-1.0.2.tgz"
   "version" "1.0.2"
 
+"@paypal/paypal-js@^5.1.4":
+  "integrity" "sha512-5ktge4DFOMu3rvFR4YWDiPm4wDUzOmghtCM9ZxgJyJCOJP+61IVYdrENysMay91T4GOZ10k2ywWcBN5shsGhLw=="
+  "resolved" "https://registry.npmjs.org/@paypal/paypal-js/-/paypal-js-5.1.4.tgz"
+  "version" "5.1.4"
+  dependencies:
+    "promise-polyfill" "^8.2.3"
+
+"@paypal/react-paypal-js@^7.8.2":
+  "integrity" "sha512-H6/qpAVkf57spCgvQPO7jNhtD58KdiywqKYmgmJm7Xnwu2wH03XfOsBjlINi1zM1VnzcyKhcliyBh9+uTAzI0g=="
+  "resolved" "https://registry.npmjs.org/@paypal/react-paypal-js/-/react-paypal-js-7.8.2.tgz"
+  "version" "7.8.2"
+  dependencies:
+    "@paypal/paypal-js" "^5.1.4"
+    "@paypal/sdk-constants" "^1.0.122"
+
+"@paypal/sdk-constants@^1.0.122":
+  "integrity" "sha512-FnZk6JZDGDxPCKHHsQ7HBBpelEy8+VFO78PlvdubgY8LGCql9eU7q1SQLYSiSW0zA5Lpr6zqVSFY0gRmlUFO9g=="
+  "resolved" "https://registry.npmjs.org/@paypal/sdk-constants/-/sdk-constants-1.0.129.tgz"
+  "version" "1.0.129"
+  dependencies:
+    "hi-base32" "^0.5.0"
+
 "@pkgr/utils@^2.3.1":
   "integrity" "sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw=="
   "resolved" "https://registry.npmjs.org/@pkgr/utils/-/utils-2.3.1.tgz"
@@ -2019,6 +2041,11 @@
   dependencies:
     "function-bind" "^1.1.1"
 
+"hi-base32@^0.5.0":
+  "integrity" "sha512-EmBBpvdYh/4XxsnUybsPag6VikPYnN30td+vQk+GI3qpahVEG9+gTkG0aXVxTjBqQ5T6ijbWIu77O+C5WFWsnA=="
+  "resolved" "https://registry.npmjs.org/hi-base32/-/hi-base32-0.5.1.tgz"
+  "version" "0.5.1"
+
 "ieee754@^1.1.13":
   "integrity" "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA=="
   "resolved" "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
@@ -2799,6 +2826,11 @@
   "resolved" "https://registry.npmjs.org/pretty-format/-/pretty-format-3.8.0.tgz"
   "version" "3.8.0"
 
+"promise-polyfill@^8.2.3":
+  "integrity" "sha512-H5oELycFml5yto/atYqmjyigJoAo3+OXwolYiH7OfQuYlAqhxNvTfiNMbV9hsC6Yp83yE5r2KTVmtrG6R9i6Pg=="
+  "resolved" "https://registry.npmjs.org/promise-polyfill/-/promise-polyfill-8.3.0.tgz"
+  "version" "8.3.0"
+
 "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
@@ -2828,7 +2860,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^16 || ^17 || ^18", "react-dom@^17.0.2 || ^18", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@18.2.0":
+"react-dom@^16 || ^17 || ^18", "react-dom@^17.0.2 || ^18", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@>=16.3.0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -2853,7 +2885,7 @@
   dependencies:
     "clsx" "^1.1.1"
 
-"react@^16 || ^17 || ^18", "react@^16.8.0 || ^17 || ^18", "react@^17.0.2 || ^18", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@18.2.0":
+"react@^16 || ^17 || ^18", "react@^16.8.0 || ^17 || ^18", "react@^17.0.2 || ^18", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@>=16.3.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
