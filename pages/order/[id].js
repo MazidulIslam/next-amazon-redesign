@@ -7,17 +7,17 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useReducer } from 'react';
 
-const FETCH_REQUEST = 'FETCH_REQUEST';
-const FETCH_SUCCESS = 'FETCH_SUCCESS';
-const FETCH_FAIL = 'FETCH_FAIL';
-const PAY_RESET = 'PAY_RESET';
-const PAY_REQUEST = 'PAY_REQUEST';
-const PAY_SUCCESS = 'PAY_SUCCESS';
-const PAY_FAIL = 'PAY_FAIL';
-const DELIVER_RESET = 'DELIVER_RESET';
-const DELIVER_REQUEST = 'DELIVER_REQUEST';
-const DELIVER_FAIL = 'DELIVER_FAIL';
-const DELIVER_SUCCESS = 'DELIVER_SUCCESS';
+export const FETCH_REQUEST = 'FETCH_REQUEST';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_FAIL = 'FETCH_FAIL';
+export const PAY_RESET = 'PAY_RESET';
+export const PAY_REQUEST = 'PAY_REQUEST';
+export const PAY_SUCCESS = 'PAY_SUCCESS';
+export const PAY_FAIL = 'PAY_FAIL';
+export const DELIVER_RESET = 'DELIVER_RESET';
+export const DELIVER_REQUEST = 'DELIVER_REQUEST';
+export const DELIVER_FAIL = 'DELIVER_FAIL';
+export const DELIVER_SUCCESS = 'DELIVER_SUCCESS';
 
 function reducer(state, action) {
   switch (action.type) {
