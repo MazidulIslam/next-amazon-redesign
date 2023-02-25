@@ -24,3 +24,9 @@ product to the cart and from the cart page you can update the quantiy. Then you 
 
 Check out my ecommerce [Next Amazon Redesign](https://next-amazon-redesign.vercel.app)
 My Github Profile [Md Mazidul Islam](https://github.com/MazidulIslam)
+
+# Login Credentials
+
+email: admin@example.com
+password: 123456
+N:B User Type Admin
