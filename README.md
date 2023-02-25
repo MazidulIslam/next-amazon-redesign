@@ -20,7 +20,7 @@ product to the cart and from the cart page you can update the quantiy. Then you 
 
 - Tailwind CSS
 
-## Deploy on Vercel
+## Deployed on Vercel
 
 Check out my ecommerce [Next Amazon Redesign](https://next-amazon-redesign.vercel.app)
 My Github Profile [Md Mazidul Islam](https://github.com/MazidulIslam)
