@@ -3,10 +3,10 @@ import data from '@/utils/data';
 import Layout from '@/components/Layout';
 import db from '@/utils/db';
 import Product from '@/models/Product';
-import { useContext } from 'react';
 import { CART_ADD_ITEM, Store } from '@/utils/store';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useContext } from 'react';
 
 export default function Home({ products }) {
   const { state, dispatch } = useContext(Store);
