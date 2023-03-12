@@ -1,10 +1,11 @@
 import Layout from '@/components/Layout';
+import { FETCH_FAIL, FETCH_REQUEST, FETCH_SUCCESS } from '@/utils/actionType';
 import { getError } from '@/utils/error';
 import axios from 'axios';
 import Link from 'next/link';
 import React, { useEffect, useReducer } from 'react';
 
-import { FETCH_FAIL, FETCH_REQUEST, FETCH_SUCCESS } from './order/[id]';
+// import { FETCH_FAIL, FETCH_REQUEST, FETCH_SUCCESS } from './order/[id]';
 
 function reducer(state, action) {
   switch (action.type) {

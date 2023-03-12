@@ -1,23 +1,38 @@
 import Layout from '@/components/Layout';
+import {
+  DELIVER_FAIL,
+  DELIVER_REQUEST,
+  DELIVER_RESET,
+  DELIVER_SUCCESS,
+  FETCH_FAIL,
+  FETCH_REQUEST,
+  FETCH_SUCCESS,
+  PAY_FAIL,
+  PAY_REQUEST,
+  PAY_RESET,
+  PAY_SUCCESS,
+} from '@/utils/actionType';
 import { getError } from '@/utils/error';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useReducer } from 'react';
+import { toast } from 'react-toastify';
 
-export const FETCH_REQUEST = 'FETCH_REQUEST';
-export const FETCH_SUCCESS = 'FETCH_SUCCESS';
-export const FETCH_FAIL = 'FETCH_FAIL';
-export const PAY_RESET = 'PAY_RESET';
-export const PAY_REQUEST = 'PAY_REQUEST';
-export const PAY_SUCCESS = 'PAY_SUCCESS';
-export const PAY_FAIL = 'PAY_FAIL';
-export const DELIVER_RESET = 'DELIVER_RESET';
-export const DELIVER_REQUEST = 'DELIVER_REQUEST';
-export const DELIVER_FAIL = 'DELIVER_FAIL';
-export const DELIVER_SUCCESS = 'DELIVER_SUCCESS';
+// export const FETCH_REQUEST = 'FETCH_REQUEST';
+// export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+// export const FETCH_FAIL = 'FETCH_FAIL';
+// export const PAY_RESET = 'PAY_RESET';
+// export const PAY_REQUEST = 'PAY_REQUEST';
+// export const PAY_SUCCESS = 'PAY_SUCCESS';
+// export const PAY_FAIL = 'PAY_FAIL';
+// export const DELIVER_RESET = 'DELIVER_RESET';
+// export const DELIVER_REQUEST = 'DELIVER_REQUEST';
+// export const DELIVER_FAIL = 'DELIVER_FAIL';
+// export const DELIVER_SUCCESS = 'DELIVER_SUCCESS';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -56,6 +71,8 @@ function reducer(state, action) {
 }
 
 function OrderScreen() {
+  const { data: session } = useSession();
+
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
   const { query } = useRouter();
   const orderId = query.id;
@@ -87,7 +104,12 @@ function OrderScreen() {
         dispatch({ type: FETCH_FAIL, payload: getError(err) });
       }
     };
-    if (!order._id || successPay || (order._id && order._id !== orderId)) {
+    if (
+      !order._id ||
+      successPay ||
+      successDeliver ||
+      (order._id && order._id !== orderId)
+    ) {
       fetchOrder();
       if (successPay) {
         dispatch({ type: PAY_RESET });
@@ -291,6 +313,17 @@ function OrderScreen() {
                       </div>
                     )}
                     {loadingPay && <div>Loading...</div>}
+                  </li>
+                )}
+                {session.user.isAdmin && order.isPaid && !order.isDelivered && (
+                  <li>
+                    {loadingDeliver && <div>Loading...</div>}
+                    <button
+                      className="primary-button w-full"
+                      onClick={deliverOrderHandler}
+                    >
+                      Deliver Order
+                    </button>
                   </li>
                 )}
               </ul>

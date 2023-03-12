@@ -28,11 +28,11 @@ export default function AdminOrderScreen() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        dispatch({ type: 'FETCH_REQUEST' });
+        dispatch({ type: FETCH_REQUEST });
         const { data } = await axios.get(`/api/admin/orders`);
-        dispatch({ type: 'FETCH_SUCCESS', payload: data });
+        dispatch({ type: FETCH_SUCCESS, payload: data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
+        dispatch({ type: FETCH_FAIL, payload: getError(err) });
       }
     };
     fetchData();

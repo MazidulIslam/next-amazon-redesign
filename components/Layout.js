@@ -75,7 +75,6 @@ export default function Layout({ title, children }) {
                         <DropdownLink
                           className="dropdown-link"
                           href="/admin/dashboard"
-                          // onClick={logoutClickHandler}
                         >
                           Admin Dashboard
                         </DropdownLink>
