@@ -17,8 +17,8 @@ const data = {
   ],
   products: [
     {
-      name: 'Free Shirt',
-      slug: 'free-shirt',
+      name: 'Free Shirt 1',
+      slug: 'free-shirt-1',
       category: 'Shirts',
       image: '/images/shirt1.jpg',
       // image: '/public/images/shirt1.jpg',
@@ -28,10 +28,12 @@ const data = {
       numReviews: 8,
       countInStock: 20,
       description: 'A popular shirt',
+      isFeatured: true,
+      banner: '/images/banner1.jpg',
     },
     {
-      name: 'Fit Shirt',
-      slug: 'fit-shirt',
+      name: 'Fit Shirt 1',
+      slug: 'fit-shirt-1',
       category: 'Shirts',
       image: '/images/shirt2.jpg',
       price: 70,
@@ -40,6 +42,8 @@ const data = {
       numReviews: 8,
       countInStock: 20,
       description: 'A popular shirt',
+      isFeatured: true,
+      banner: '/images/banner2.jpg',
     },
     {
       name: 'Slim Shirt',

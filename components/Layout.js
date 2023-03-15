@@ -8,6 +8,8 @@ import { Menu } from '@headlessui/react';
 import 'react-toastify/dist/ReactToastify.css';
 import DropdownLink from './DropdownLink';
 import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
+import { SearchIcon } from '@heroicons/react/24/outline';
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -22,6 +24,13 @@ export default function Layout({ title, children }) {
     Cookies.remove('cart');
     dispatch({ type: CART_RESET });
     signOut({ callbackUrl: '/login' });
+  };
+
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    router.push(`/search?query=${query}`);
   };
   return (
     <>
@@ -40,7 +49,41 @@ export default function Layout({ title, children }) {
               amazon
               {/* <a className="text-lg font-bold">amazon</a> */}
             </Link>
-            <div>
+
+            <form
+              onSubmit={submitHandler}
+              className="mx-auto  hidden w-full justify-center md:flex"
+            >
+              <input
+                onChange={(e) => setQuery(e.target.value)}
+                type="text"
+                className="rounded-tr-none rounded-br-none p-1 text-sm   focus:ring-0"
+                placeholder="Search products"
+              />
+              <button
+                className="rounded rounded-tl-none rounded-bl-none bg-amber-300 p-1 text-sm dark:text-black"
+                type="submit"
+                id="button-addon2"
+              >
+                {/* <SearchIcon className="h-5 w-5"></SearchIcon> */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                  />
+                </svg>
+              </button>
+            </form>
+
+            <div className="flex items-center">
               <Link href="/cart" className="p-2">
                 Cart
                 {cartItemsCount > 0 && (
@@ -54,7 +97,7 @@ export default function Layout({ title, children }) {
                 'Loading'
               ) : session?.user ? (
                 // session.user.name
-                <Menu as="div" className="relative inline-block">
+                <Menu as="div" className="relative inline-block z-50">
                   <Menu.Button>{session.user.name}</Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right shadow-lg bg-white">
                     <Menu.Item>

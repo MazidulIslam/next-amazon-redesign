@@ -166,14 +166,14 @@ export default function AdminProdcutsScreen() {
                         <Link
                           href={`/admin/product/${product._id}`}
                           type="button"
-                          className="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
+                          className="btn btn-green"
                         >
                           Edit
                         </Link>
                         &nbsp;
                         <button
                           onClick={() => deleteHandler(product._id)}
-                          className="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+                          className="btn btn-red"
                           type="button"
                         >
                           Delete

@@ -127,7 +127,7 @@ function AdminUsersScreen() {
                         <Link
                           href={`/admin/user/${user._id}`}
                           type="button"
-                          className="default-button"
+                          className="btn btn-green"
                           passHref
                         >
                           Edit
@@ -135,7 +135,7 @@ function AdminUsersScreen() {
                         &nbsp;
                         <button
                           type="button"
-                          className="default-button"
+                          className="btn btn-red"
                           onClick={() => deleteHandler(user._id)}
                         >
                           Delete
