@@ -27,9 +27,12 @@ My Github Profile [Md Mazidul Islam](https://github.com/MazidulIslam)
 
 # Login Credentials
 
-email: admin@example.com
-password: 123456
-N:B User Type Admin
-For Regular User
-email: user@example.com
-password: 123456
+- email: admin@example.com
+- password: 123456
+
+#### N:B User Type Admin
+
+#### For Regular User
+
+- email: user@example.com
+- password: 123456
