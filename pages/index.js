@@ -40,8 +40,8 @@ export default function Home({ products, featuredProducts }) {
               <Image
                 src={product.banner}
                 alt={product.name}
-                width={100}
-                height={100}
+                width={1200}
+                height={300}
               />
             </Link>
           </div>
